@@ -1,0 +1,726 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiando al portapapeles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kufam:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        .red-text {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<script>
+    window.onload = function() {
+        // Obtener todos los elementos correspondientes
+        var copyTextareaBtn = Array.prototype.slice.call(document.querySelectorAll('.js-textareacopybtn'));
+        var copyTextarea = Array.prototype.slice.call(document.querySelectorAll('.js-copytextarea'));
+
+        // Almacenar los textos copiados en un array
+        var copiedTexts = [];
+
+        // Recorrer todos los elementos
+        copyTextareaBtn.forEach(function(btn, idx) {
+            btn.addEventListener("click", function() {
+                // Copiar el contenido del textarea
+                copyTextarea[idx].select();
+                var msg = document.execCommand('copy') ? 'funcionó' : 'dio error';
+                console.log('Copia para copiar texto ' + msg);
+
+                if (msg === 'funcionó') {
+                    // Agregar el texto copiado al inicio del array
+                    copiedTexts.unshift(copyTextarea[idx].value);
+
+                    // Mantener solo los últimos tres textos copiados
+                    if (copiedTexts.length > 14) {
+                        copiedTexts.pop(); // Eliminar el texto más antiguo
+                    }
+
+                    // Aplicar estilo rojo solo a los textos copiados
+                    copyTextarea.forEach(function(textarea) {
+                        textarea.classList.remove('red-text');
+                    });
+
+                    copiedTexts.forEach(function(copiedText) {
+                        copyTextarea.forEach(function(textarea) {
+                            if (textarea.value === copiedText) {
+                                textarea.classList.add('red-text');
+                            }
+                        });
+                    });
+                }
+            });
+        });
+    }
+</script>
+
+    <div>
+
+   <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 318 5830756 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">C153ar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 318 5830756 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 315 7819506 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">Copiar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 315 7819506 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 315 7631963 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">Copiar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 315 7631963 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+
+   <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 315 4542773 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">Copiar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 315 4542773 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+   <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 315 3009374 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">C157ar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 315 3009374 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">C157ar</button>
+
+      </p>
+   <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 315 2444562 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">Copiar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 315 2444562 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+   <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 315 2585138 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">C159ar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 315 2585138 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+   <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 315 3317405 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">Copiar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 315 3317405 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+   <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 317 3987026 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">Copiar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 317 3987026 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+
+ 
+   <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 315 5066295 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">Copiar</button>
+
+         </p>
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 315 5066295 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+  <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 315 2958825 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">C151ar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 315 2958825 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+
+
+   <p>
+          <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 316 2136197 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">C151ar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 316 2136197 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+   <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 315 2023976 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">Copiar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 315 2023976 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+   <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 316 8595962 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">C149ar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 316 8595962 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+           <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 315 5169929 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">C149ar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 315 5169929 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+ 
+   
+     <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 315 6002820 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">C149ar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 315 6002820 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+  
+   <p>
+           <textarea class="js-copytextarea">Hola gracias escribeme a mi WhatsApp +57 315 7525503 estoy en Bogota amor</textarea>
+           <button class="js-textareacopybtn">C149ar</button>
+
+         </p>
+
+      <p>
+        <textarea class="js-copytextarea"> Escribeme a mi WhatsApp +57 315 7525503 estoy en Bogota amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+  
+      <p>
+        <textarea class="js-copytextarea">eliminar
+javascript:var inputs = document.getElementsByClassName('x1lliihq x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft'); for(var i=0; i<inputs.length;i++) {
+inputs[i].click();
+}  setInterval(function(){inputs[i].click();i++;console.log(i);}, 1000);
+</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+
+      <p>
+        <textarea class="js-copytextarea">❤️</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+
+      <p>
+        <textarea class="js-copytextarea">Yo vivo en la 127 con avenida villas al frente de bulevar amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+
+      <p>
+        <textarea class="js-copytextarea">amor al fin vas a enviame a mi nequi yo queria masturbarme un rato</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">mi nequi 3164909368 🔥💋.</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">te envío hermosos videos como tú los quieras todo el mes y nos vídeo llamamos para conocernos mejor Amor🔥💋.</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Gracias cariño❤️</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+
+      <p>
+        <textarea class="js-copytextarea">Bueno amor me envias mañana yo estaré pendiente</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Besos Amor¡¡🔥💋💋💋💋💋💋💋💋💋</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Bueno rey quedamos así me envías la transferencia que yo are todo lo necesario para consentirlo mucho Amor🔥.</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">https://mobile.facebook.com/friends/center/requests/all/?eav=AfYFVO27kos0blwu0ozlBrojQN54XTm7eILP9iueedMP1g-leosOGvDTaoc6RxX-t8k&paipv=0</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">javascript:var inputs = document.getElementsByClassName('_54k8 _52jg _56bs _26vk _56b_ _3cqr _5uc2 _8yo0 _56bu'); for(var i=0; i<inputs.length;i++) {
+inputs[i].click();
+}  setInterval(function(){inputs[i].click();i++;console.log(i);}, 1000); </textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Yo vivo en la 127 con avenida villas al frente de bulevar amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Amor 10mil seria mas que suficiente cariño❤️</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">https://mobile.facebook.com/friends/center/requests/all/?eav=AfYFVO27kos0blwu0ozlBrojQN54XTm7eILP9iueedMP1g-leosOGvDTaoc6RxX-t8k&paipv=0</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">javascript:var inputs = document.getElementsByClassName('_54k8 _52jg _56bs _26vk _56b_ _3cqr _5uc2 _8yo0 _56bu'); for(var i=0; i<inputs.length;i++) {
+inputs[i].click();
+}  setInterval(function(){inputs[i].click();i++;console.log(i);}, 1000); </textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">javascript:var inputs = document.getElementsByClassName('_54k8 _52jg _56bs _26vk _56b_ _3cqr _5uc2 _8yo0 _56bu'); for(var i=0; i<inputs.length;i++) {
+inputs[i].click();
+}  setInterval(function(){inputs[i].click();i++;console.log(i);}, 1000); </textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea name="textarea164" class="js-copytextarea" style="color: yellow;">javascript:var inputs = document.getElementsByClassName('_54k8 _52jg _56bs _26vk _40x9 _8yzt _56bu'); for(var i=0; i<inputs.length;i++) {
+inputs[i].click();
+}  setInterval(function(){inputs[i].click();i++;console.log(i);}, 1000);
+</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">https://mobile.facebook.com/friends/center/suggestions/?eav=AfayF1mrmz9eCxhmJFuZpio8Ba9d0NF4nXQSiu1yp_zrbn7miovxFff_sWNrYkpjPuI&paipv=0&_rdr</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">javascript:var inputs = document.getElementsByClassName('_54k8 _52jg _56bs _26vk _56b_ _3cqr _5uc2 _8yo0 _56bu'); for(var i=0; i<inputs.length;i++) {
+inputs[i].click();
+}  setInterval(function(){inputs[i].click();i++;console.log(i);}, 1000); </textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea"style="color: red;">Estoy en Bogota</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea"style="color: red;">Hola gracias de donde eres</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">https://www.messenger.com/login.php?next=https%3A%2F%2Fwww.messenger.com%2Ft%2F100003050855542</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Ufff me excitas mucho</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Wow me encantaría hacerte un oral q nunca olvidarías</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">uufhsss todas tuyaaa mi amor 😍😍😍😍</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Hola bien gracias</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Huy q riiicooo uffhsss q me deje las piernas temblando sexo rudo contigo amor seria perfectoo</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Venga y yo lo enseñó a hacerme gritar' De placer amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea name="textarea164" class="js-copytextarea" style="color: yellow;">Bueno amor si se anima me envías el recibo al facebook si me consignas a mi nequi 3164909368 los 20Mil asi yo te complazco con vídeo llamadas y los vídeos como tu los quieras y después cojemos amor🔥</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+      </p>
+
+      <p>
+        <textarea class="js-copytextarea">Besos Amor¡¡🔥💋💋💋💋💋💋💋💋💋</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Gracias ✨ amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+
+      <p>
+        <textarea class="js-copytextarea">Ricooo riicoo ricoooo</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea"style="color: red;">Entras con tu cuenta para que me veas cada vez q este en vivo amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Waooo q ricoooo amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Encantada de conocerte amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea"style="color: red;">inténtalo de nuevo para que me veas todas las noches' amor❤️</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Que rico lo tienes amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+
+      <p>
+        <textarea class="js-copytextarea">Tengo el chocho mojado y no puedo seguir con esta calentura entra mira como me vengo completa amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">mee encantaa q ricooo mi amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Sabías que las venezolanas son demasiado caliente</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Uf sería de lo máximo amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Dime qué te gustan de las venezolanas</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+      <p>
+        <textarea class="js-copytextarea">Mas adelante amor</textarea>
+        <button class="js-textareacopybtn">Copiar</button>
+
+      </p>
+    </p>
+    <p>
+      <textarea class="js-copytextarea">Q Rico Eso Me Encanta</textarea>
+      <button class="js-textareacopybtn">Copiar</button>
+
+    </p>
+  </p>
+  <p>
+    <textarea class="js-copytextarea">Uyyyy Q RiKo sii</textarea>
+    <button class="js-textareacopybtn">Copiar</button>
+
+  </p>
+</p>
+<p>
+  <textarea class="js-copytextarea">Me encanta excitar me</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+
+<p>
+  <textarea class="js-copytextarea">Q Rico Eso Me Encanta</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Super lindo</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Mas tarde seguimos hablando amor</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Gracias ya lo anote y ahorita que active el nuevo whatsapp te escribo✨</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Q ricooo mee encanta enculada 😘😘❤😍😍😍</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">te lo regalo mañana lo iba a cambiar mi numero no e colocado el nuevo aun tampoco me lo se</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Si gracias mi amor me encanta cm me escribas de verdad</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Super lindo yo me desnudo en directo y ese es mi trabajo y me encanta❤️❤️</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">por ahora voy a cambiar el numero dame el tuyo y mas tarde te agrego'❤️❤️</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Mucho gusto caballero💖💖</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Me estuvieras haciendo el amor ricoooooo ricooo divino papasito</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Soy una adicta al sexo</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea"style="color: red;">"style="color: red;"</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Ricooo riicoo ricoooo</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Es usted muy amable amor</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">te espero amor en mi video chat amor</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">si te sirve pueds verme todas las noches amor</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea"style="color: red;">Te espero amor y de paso me apoyas te lo agrdesria de verdad amor</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">apoyame amor</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Está bien tranquilo 😊😊 no te voy a obligar nadie a verme en directo en este momento si mañana te conectas gracias de verdad</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Que rico amor</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Que bien bb estas como a mi me gusta</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Uf q ricooooooo mee encantaaa tu penee😋😋😋😋</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Mmm si bueno hazme muy feliz entonces</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Encantadas mi bb hermoso 😍 para cuidarte y darte muchoos besitoos</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea name="textarea164" class="js-copytextarea" style="color: yellow;">Mi en la cama me gusta que me cojan en 4 bien rico 🤤 y que me lo metas por el culito así rico te lo quiero mamar</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Así me encanta y mamá el huevo rico 🤤 Ami me gusta mucho</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Si pero quiero más yo quiero sentir tu huevo dentro de mi así todo grande por mi Cuca y mi boca uuuff y mi culito rico</textarea>
+  <button class="js-textareacopybtn">Copiar</button>😍🌹🔥
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Yo te quiero conocer de verdad no es por interés ni nada de eso sí no que caes bien y me gustas cm hambre ☺️</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea"style="color: red;">javascript:var inputs = document.getElementsByClassName('x193iq5w xeuugli x13faqbe x1vvkbs x1xmvt09 x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xudqn12 x3x7a5m x6prxxf xvq8zen x1s688f xtk6v10'); for(var i=0; i<inputs.length;i++) {
+inputs[i].click();
+}  setInterval(function(){inputs[i].click();i++;console.log(i);}, 1000);</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Hola me apareciste en personas q quizás conozcas y te envié la solicitud de amistad, espero no ser molestia.</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+<p>
+  <textarea class="js-copytextarea">Tan bello mor</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p><p>
+  <textarea class="js-copytextarea">Yo igual estaré hay</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p><p>
+  <textarea class="js-copytextarea">Eso espero mi amor de verdad</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p><p>
+  <textarea class="js-copytextarea">Tan bello</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p><p>
+  <textarea class="js-copytextarea">Así es y será ni amor con el favor de Dios y bueno si para tener éxito hay q trabajarlo</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p><p>
+  <textarea class="js-copytextarea">Cómo estás bb piciiiiiosooo</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p><p>
+  <textarea class="js-copytextarea">Chao corazón 😘❤️</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p><p>
+  <textarea class="js-copytextarea"style="color: yellow;">javascript:var inputs = document.getElementsByClassName('x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x1ypdohk xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x87ps6o x1lku1pv x1a2a7pz x9f619 x3nfvp2 xdt5ytf xl56j7k x1n2onr6 xh8yej3'); for(var i=0; i<inputs.length;i++) {
+inputs[i].click();
+}  setInterval(function(){inputs[i].click();i++;console.log(i);}, 5000);
+</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+</p><p>
+  <textarea class="js-copytextarea">javascript:var inputs = document.getElementsByClassName('_54k8 _52jg _56bs _26vk _56b_ _5uc3 _3cqr _8yo0 _56bt'); for(var i=0; i<inputs.length;i++) {
+inputs[i].click();
+}  setInterval(function(){inputs[i].click();i++;console.log(i);}, 1000);</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+</p><p>
+  <textarea class="js-copytextarea"><textarea name="textarea164" class="js-copytextarea" style="color: yellow;"</textarea>
+  <button class="js-textareacopybtn">Copiar</button>
+
+</p>
+
+    </div>
+</body>
+</html>
