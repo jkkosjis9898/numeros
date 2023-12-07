@@ -61,7 +61,7 @@ h1{
     border-radius: 8px;
 }
 button{
-  width: 166px;
+  width: 120px;
   height: 49px;
   background: #343132;
   color: #dad1da;
@@ -90,7 +90,7 @@ button{
     transition: opacity .6s;
 }
 
-textarea{width: 246px;
+textarea{width: 235px;
   border-width: 1px;
 border-style: solid;
 border-color: #a9a8b0;
