@@ -90,7 +90,7 @@ button{
     transition: opacity .6s;
 }
 
-textarea{width: 270px;
+textarea{width: 250px;
   border-width: 1px;
 border-style: solid;
 border-color: #a9a8b0;
